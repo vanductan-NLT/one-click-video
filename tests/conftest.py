@@ -7,7 +7,9 @@ from src.shared.config.settings import settings
 
 # Sử dụng một database test riêng hoặc sqlite memory để chạy nhanh
 # Ở đây tôi ví dụ dùng chính Postgres trong Docker nhưng một DB name khác
-TEST_DATABASE_URL = settings.DATABASE_URL.replace("one_click_video", "test_one_click_video")
+import re
+TEST_DATABASE_URL = re.sub(r"/([^/]+)$", r"/test_\1", settings.DATABASE_URL)
+
 
 @pytest.fixture(scope="session")
 def event_loop():

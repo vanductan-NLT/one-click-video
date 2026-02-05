@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "one-click-video"
+name = "crownmercado-automation-dev"
 version = "0.1.0"
 description = "Self-hosted video processing platform with AI-powered editing"
 requires-python = ">=3.11"

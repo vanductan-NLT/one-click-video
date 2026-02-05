@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     LOG_LEVEL: str = "info"
     
     # Database
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@db:5432/one_click_video"
+    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@postgres:5432/postgres"
     
     # Redis / Queue
     REDIS_URL: str = "redis://redis:6379/0"

@@ -2,7 +2,7 @@ from celery import Celery
 from src.shared.config.settings import settings
 
 celery_app = Celery(
-    "one_click_video",
+    settings.APP_NAME,
     broker=settings.REDIS_URL,
     backend=settings.REDIS_URL,
     include=["src.worker.tasks"]
