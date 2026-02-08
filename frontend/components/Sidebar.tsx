@@ -42,27 +42,12 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }: SidebarProps) {
 
             <nav className="mt-4 flex-1 px-3 space-y-1">
                 {menuItems.map((item) => {
-                    const isActive = item.type === 'link' && pathname === item.href;
-
-                    if (item.type === 'button') {
-                        return (
-                            <button
-                                key={item.label}
-                                onClick={item.onClick}
-                                className={`w-full flex items-center gap-4 py-3 px-3 transition-all rounded-lg relative text-text-secondary hover:text-white hover:bg-white/5`}
-                            >
-                                <item.icon size={20} />
-                                {!isCollapsed && (
-                                    <span className="text-sm font-medium">{item.label}</span>
-                                )}
-                            </button>
-                        );
-                    }
+                    const isActive = pathname === item.href;
 
                     return (
                         <Link
                             key={item.label}
-                            href={item.href || '#'}
+                            href={item.href}
                             className={`flex items-center gap-4 py-3 px-3 transition-all rounded-lg relative ${isActive ? 'text-white' : 'text-text-secondary hover:text-white hover:bg-white/5'}`}
                         >
                             {isActive && (
